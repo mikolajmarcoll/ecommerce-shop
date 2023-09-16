@@ -1,3 +1,5 @@
+import { getFormattedPrice } from "@/utils/formattedPrice";
+
 export const ProductListItemDescription = ({
 	name,
 	price,
@@ -7,14 +9,11 @@ export const ProductListItemDescription = ({
 	price: number;
 	category: string;
 }) => {
-	const formattedPrice = new Intl.NumberFormat("en-US", {
-		style: "currency",
-		currency: "USD",
-	}).format(price);
+	const formattedPrice = getFormattedPrice(price, "USD");
 
 	return (
 		<div className="flex w-full flex-col">
-			<div className="flex justify-between">
+			<div className="flex items-center justify-between gap-2">
 				<h3 className="text-lg font-medium text-gray-800">{name}</h3>
 				<p className="text-sm font-bold text-gray-800">{formattedPrice}</p>
 			</div>

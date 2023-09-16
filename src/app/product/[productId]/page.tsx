@@ -36,6 +36,7 @@ export default async function ProductDetailsPage({ params }: { params: { product
 	return (
 		<>
 			<article className="max-w-xs">
+				<h1>{name}</h1>
 				<ProductListItemCoverImage {...coverImage} />
 				<ProductListItemDescription name={name} category={category} price={price} />
 			</article>
