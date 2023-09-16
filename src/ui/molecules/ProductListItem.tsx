@@ -12,7 +12,7 @@ export const ProductListItem = ({
 	return (
 		<li>
 			<Link href={`/product/${id}`}>
-				<article className="flex flex-col items-center space-y-4">
+				<article className="flex w-64 flex-col items-center space-y-4">
 					<ProductListItemCoverImage {...coverImage} />
 					<ProductListItemDescription name={name} price={price} category={category} />
 				</article>
