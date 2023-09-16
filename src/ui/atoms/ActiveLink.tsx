@@ -8,6 +8,7 @@ import clsx from "clsx";
 export const ActiveLink = ({ href, children }: { href: string; children: ReactNode }) => {
 	const pathname = usePathname();
 	const isActive = pathname === href;
+	// TODO: add typeRoutes to href
 	return (
 		<Link
 			href={href}

@@ -1,15 +1,11 @@
 import { ProductListItem } from "@/ui/molecules/ProductListItem";
-import { type ProductListItemType } from "@/ui/types";
-
-export const ProductList = ({ productItems }: { productItems: ProductListItemType[] }) => {
+import { type ProductItemType } from "@/ui/types";
+// TODO: improve styling
+export const ProductList = ({ products }: { products: ProductItemType[] }) => {
 	return (
 		<ul data-testid="products-list" className="flex gap-6">
-			{productItems.map((productItem) => {
-				return (
-					<li key={productItem.id}>
-						<ProductListItem productItem={productItem} />
-					</li>
-				);
+			{products.map((product) => {
+				return <ProductListItem key={product.id} productItem={product} />;
 			})}
 		</ul>
 	);

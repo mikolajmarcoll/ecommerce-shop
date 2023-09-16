@@ -1,16 +1,22 @@
+import Link from "next/link";
+
 import { ProductListItemCoverImage } from "@/ui/atoms/ProductListItemCoverImage";
 import { ProductListItemDescription } from "@/ui/atoms/ProductListItemDescription";
-import { type ProductListItemType } from "@/ui/types";
+import { type ProductItemType } from "@/ui/types";
 
 export const ProductListItem = ({
-	productItem: { name, price, category, coverImage },
+	productItem: { id, name, price, category, coverImage },
 }: {
-	productItem: ProductListItemType;
+	productItem: ProductItemType;
 }) => {
 	return (
-		<article className="flex flex-col items-center space-y-4">
-			<ProductListItemCoverImage {...coverImage} />
-			<ProductListItemDescription name={name} price={price} category={category} />
-		</article>
+		<li>
+			<Link href={`/product/${id}`}>
+				<article className="flex flex-col items-center space-y-4">
+					<ProductListItemCoverImage {...coverImage} />
+					<ProductListItemDescription name={name} price={price} category={category} />
+				</article>
+			</Link>
+		</li>
 	);
 };

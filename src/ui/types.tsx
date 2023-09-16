@@ -1,4 +1,4 @@
-export type ProductListItemType = {
+export type ProductItemType = {
 	id: string;
 	name: string;
 	category: string;
@@ -7,4 +7,5 @@ export type ProductListItemType = {
 		src: string;
 		alt: string;
 	};
+	description: string;
 };
