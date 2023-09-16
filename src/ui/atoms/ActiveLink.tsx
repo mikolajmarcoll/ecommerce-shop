@@ -11,7 +11,7 @@ type ActiveLinkProps = {
 	exact?: boolean;
 };
 
-export const ActiveLink = ({ href, children, exact = false }: ActiveLinkProps) => {
+export const ActiveLink = ({ href, children }: ActiveLinkProps) => {
 	const pathname = usePathname();
 	const isActive = pathname === href;
 	// TODO: add typeRoutes to href
@@ -22,7 +22,6 @@ export const ActiveLink = ({ href, children, exact = false }: ActiveLinkProps) =
 				"border-b-2": isActive,
 				"border-sky-400": isActive,
 			})}
-			exact={exact}
 		>
 			{children}
 		</Link>
